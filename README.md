@@ -19,7 +19,7 @@ For now script will ask you for input:
 
 **Domain:** Company domain name used in their emails.
 
-**Format method:** Specify method for email creation1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com;  *More methods in future versions*
+**Format method:** Specify method for email creation 1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com;  *More methods in future versions*
 
 **Number of results:** You can select 100, 200 or 300. *Please be aware the more results you select the higher probability of false positives. I recommend to check peopleInfo.txt for verification*
 
