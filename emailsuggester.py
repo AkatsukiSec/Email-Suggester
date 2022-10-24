@@ -24,28 +24,29 @@ resultsNumber = input()
 if len(resultsNumber) <= 0:
     resultsNumber = 100
 
-url = 'http://google.com/search?num=100&start=0&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
-urlTwo = 'http://google.com/search?num=100&start=100&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
-urlThree = 'http://google.com/search?num=100&start=200&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
+url = 'https://google.com/search?num=100&start=0&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
+urlTwo = 'https://google.com/search?num=100&start=100&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
+urlThree = 'https://google.com/search?num=100&start=200&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
 userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"
 headers = {'User-Agent': userAgent }
+cookies = {"CONSENT": "YES+cb.20210720-07-p0.en+FX+410"}
 results = str()
 names = str()
 
 if int(resultsNumber) <=100:
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers, cookies=cookies)
     text = html2text.html2text(r.text)
 elif int(resultsNumber) <=200:
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers. ccookies=cookies)
     text = html2text.html2text(r.text)
-    r = requests.get(urlTwo, headers=headers)
+    r = requests.get(urlTwo, headers=headers, cookies=cookies)
     text = text + html2text.html2text(r.text)
 else:
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers, cookies=cookies)
     text = html2text.html2text(r.text)
-    r = requests.get(urlTwo, headers=headers)
+    r = requests.get(urlTwo, headers=headers, cookies=cookies)
     text = text + html2text.html2text(r.text)
-    r = requests.get(urlThree, headers=headers)
+    r = requests.get(urlThree, headers=headers, cookies=cookies)
     text = text + html2text.html2text(r.text)
 
 file = open('output.txt','w+', encoding="UTF-8")
