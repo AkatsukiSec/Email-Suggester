@@ -37,7 +37,7 @@ if int(resultsNumber) <=100:
     r = requests.get(url, headers=headers, cookies=cookies)
     text = html2text.html2text(r.text)
 elif int(resultsNumber) <=200:
-    r = requests.get(url, headers=headers. ccookies=cookies)
+    r = requests.get(url, headers=headers, cookies=cookies)
     text = html2text.html2text(r.text)
     r = requests.get(urlTwo, headers=headers, cookies=cookies)
     text = text + html2text.html2text(r.text)
