@@ -9,26 +9,22 @@ Email suggester is a python OSINT script for penetration testers. This script fi
 
 
 ```
-python3 emailsuggester.py
+python3 emailsuggester.py args
 ```
 
 
-For now script will ask you for input: 
+ 
 
-**Targeted company:** Specify target company name - for best results find exact company name on LinkedIn
+**-c:** Specify target company name - for best results find exact company name on LinkedIn
 
-**Domain:** Company domain name used in their emails.
+**-d:** Company domain name used in their emails.
 
-**Format method:** Specify method for email creation 1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com;  *More methods in future versions*
+**-m:** Specify method for email creation 1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com;  *More methods in future versions*
 
-**Number of results:** You can select 100, 200 or 300. *Please be aware the more results you select the higher probability of false positives. I recommend to check peopleInfo.txt for verification*
-
-Plannig to rewrite usage to command line args in future versions when i have more time. 
+**-n** You can select 100, 200 or 300. *Please be aware the more results you select the higher probability of false positives. I recommend to check peopleInfo.txt for verification*
 
 
-## Licensing
 
-I don't care. Do whatever you want. Just be nice and don't do stupid things. 
 
 
 
