@@ -1,27 +1,33 @@
 import requests
 import html2text
-import re
-import os
+import argparse
 
-print('Enter your targeted company (for best results use exact company name from LinkedIn):')
-target = input()
-if len(target) <= 0:
-    exit(1)
+#args
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--domain", help="Target domain ex. example.com", required=False)
+parser.add_argument("-c", "--company", help="Target company. Use same name as on LinkedIn", required=False)
+parser.add_argument("-n", "--number", help="Number of results. Default 100", required=False)
+parser.add_argument("-m", "--method", help="Select method: 1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com; (Default = 1)", required=False)
+args = parser.parse_args()
 
-print('Enter target domain:')
-domain = input()
-if len(domain) <= 0:
-    exit(1)
+target = args.company
+if target == None:
+    exit("Target company is reqired")
 
-print('Select method: 1 = [first].[last]@domain.com; 2 = [last].[first]@domain.com; (Default = 1)')
 
-method = input()
-if len(method) <= 0:
+domain = args.domain
+if domain == None:
+    exit("Domain is required")
+
+
+
+method = args.method
+if method == None:
     method = 1
     
-print('Select number of results options= 100; 200; 300; (Default = 100)')
-resultsNumber = input()
-if len(resultsNumber) <= 0:
+
+resultsNumber = args.number
+if resultsNumber == None:
     resultsNumber = 100
 
 url = 'https://google.com/search?num=100&start=0&hl=en&meta=&q=site%3Alinkedin.com/in%20' + target
